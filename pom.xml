@@ -58,17 +58,33 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
-					<archive>  
-                    <manifest>  
-                        <mainClass>MessageQueue</mainClass>  
-                    </manifest>  
-                </archive>  
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>MessageQueue.SQSConsumerTest</mainClass>
+						</manifest>
+					</archive>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-	
-	
-	
-	
+
+
+
+
 </project>
